@@ -1,0 +1,447 @@
+.required-label .control-label::after,
+.required-content::after {
+    @include requiredField(relative, -3px);
+}
+
+.form-group {
+    margin-bottom: 26px;
+    
+    .control-label {
+        text-transform: capitalize;
+        text-align: start;
+    }
+
+    input[type=checkbox]+.control-label {
+        margin-left: initial;
+        margin-inline-start: 8px;
+    }
+
+    &.mx-radiobuttons.inline .mx-radiogroup .radio {
+        margin-right: initial;
+        margin-inline-end: 20px;
+
+        input[type=radio] {
+            margin-right: initial;
+            margin-inline-end: 8px;
+        }
+
+        label {
+            margin-left: initial;
+            // Will work on "rtl" 
+            padding-right: initial !important;
+        }
+    }
+
+    .form-control-static {
+        border-bottom: 1px solid $border-color-default;
+        padding: 10px 0px;
+    }
+}
+
+/************************** floating label ***************************/
+// IMPORTANT: to make this work, dataview should be "vertical" not "horizontal"
+.floating-label {
+
+    &.mx-textbox,
+    &.mx-textarea {
+        position: relative;
+
+        input,
+        textarea {
+            min-height: 48px;
+        }
+
+        input:not([value=""]),
+        input:focus,
+        textarea:not([value=""]),
+        textarea:focus {
+            padding-top: 20px !important;
+            padding-bottom: 5px !important;
+            min-height: 48px;
+        }
+
+        .control-label {
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            top: 14px;
+            transition: 0.2s ease all;
+            margin-bottom: 0;
+            width: calc(100% - 2px);
+            padding-inline-start: 15px;
+            left: 1px;
+            right: 1px;
+            border-radius: $border-radius-default;
+            background: #fff;
+        }
+
+        /* IMPORTANT: add an empty white space to the text area placeholder so the class works */
+        &:has(input:not([value=""])) .control-label,
+        &:has(input:focus) .control-label,
+        &:has(textarea:not(:placeholder-shown)) .control-label,
+        &:has(textarea:focus) .control-label {
+            top: 1px;
+            padding: 2px 7px 0 7px;
+            font-size: 12px;
+        }
+
+        // .mx-textarea-counter {
+        //     position: absolute;
+        //     top: 2px;
+        //     right: 9px;
+        //     margin: 0;
+        //     width: fit-content;
+        //     font-weight: normal;
+        //     // color: $color-light-gray;
+        // }
+
+        textarea {
+            @include scrollbar(7px, 7px, #c5c5c5, 5px, darken(#c5c5c5, 10%), #f3f3f3);
+        }
+
+        &.has-error .form-control {
+            border-color: $brand-danger;
+        }
+
+        &:has(.form-control[disabled]) .control-label {
+            background-color: $input-disabled;
+        }
+    }
+
+    &.mx-datepicker {
+        position: relative;
+
+        input.form-control {
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-inline-start: 8px;
+            padding-inline-end: 40px;
+            min-height: 48px;
+        }
+
+        .control-label {
+            position: absolute;
+            top: 3px;
+            bottom: 10px;
+            left: 1px;
+            right: 1px;
+            font-size: 12px !important;
+            width: calc(100% - 2px);
+            padding-inline-start: 7px;
+            background-color: transparent !important;
+            height: fit-content;
+            margin-bottom: 0;
+        }
+
+        .btn-calendar,
+        .mx-compound-control button,
+        .mx-compound-control button:hover,
+        .mx-compound-control button:focus {
+            width: 40px;
+            height: 48px;
+            background-image: url("calendar.svg") !important;
+            background-repeat: no-repeat !important;
+            background: transparent;
+            background-position: center;
+            background-size: 20px;
+            margin: 0 !important;
+            border: none;
+            position: absolute;
+            right: 0px;
+            top: 0;
+
+            .glyphicon-calendar,
+            .mx-icon-filled {
+                display: none;
+            }
+        }
+
+        &.has-error .form-control {
+            border-color: $brand-danger;
+        }
+    }
+
+    &.mx-dropdown {
+        position: relative;
+
+        .form-control {
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-inline-start: 8px;
+            padding-inline-end: 40px;
+            min-height: 48px;
+        }
+
+        // normal label style
+        .control-label {
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            height: fit-content;
+            margin-bottom: 0;
+            transition: 0.2s ease all;
+        }
+
+        &.dorpDown-with-value .control-label,
+        &:has(.form-control:focus) .control-label {
+            top: 3px;
+            left: 8px;
+            font-size: 12px;
+        }
+
+        &.has-error .form-control {
+            border-color: $brand-danger;
+        }
+    }
+
+    &.mx-radiobuttons.has-error .mx-radiogroup .radio {
+        label {
+            color: $font-color-default;
+        }
+
+        input[type=radio]:before {
+            border-color: $brand-danger;
+        }
+    }
+
+    .alert,
+    .alert-danger {
+        padding: 0;
+        padding-inline-start: 8px;
+        background-color: inherit !important;
+        border: none;
+        color: $brand-danger !important;
+        font-size: 12px;
+    }
+}
+
+/********************* custom search input ***********************/
+.custom-search-input {
+    position: relative;
+
+    &::before {
+        content: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' height='16' viewBox='0 0 16 16' width='16'><path d='M10.592 9.872L16 15.28L15.28 16L9.872 10.576C9.34933 11.0347 8.752 11.3867 8.08 11.632C7.41867 11.8773 6.72533 12 6 12C4.912 12 3.904 11.728 2.976 11.184C2.06933 10.6507 1.34933 9.93067 0.816 9.024C0.272 8.096 0 7.088 0 6C0 4.912 0.272 3.904 0.816 2.976C1.34933 2.06933 2.06933 1.34933 2.976 0.816C3.904 0.272 4.912 0 6 0C7.088 0 8.096 0.272 9.024 0.816C9.93067 1.34933 10.6507 2.06933 11.184 2.976C11.728 3.904 12 4.912 12 6C12 6.72533 11.8773 7.41867 11.632 8.08C11.3867 8.74133 11.04 9.33867 10.592 9.872ZM6.016 11.008C6.92267 11.008 7.76 10.7787 8.528 10.32C9.28533 9.88267 9.88267 9.28533 10.32 8.528C10.7787 7.76 11.008 6.92267 11.008 6.016C11.008 5.10933 10.7787 4.26667 10.32 3.488C9.88267 2.73067 9.28533 2.13333 8.528 1.696C7.76 1.23733 6.92267 1.008 6.016 1.008C5.10933 1.008 4.26667 1.23733 3.488 1.696C2.73067 2.13333 2.13333 2.73067 1.696 3.488C1.23733 4.26667 1.008 5.10933 1.008 6.016C1.008 6.92267 1.23733 7.76 1.696 8.528C2.13333 9.28533 2.73067 9.88267 3.488 10.32C4.26667 10.7787 5.10933 11.008 6.016 11.008Z'/></svg>");
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+    }
+
+    .form-control {
+        min-height: 48px;
+        padding: 8px 40px;
+        z-index: 6;
+        background: transparent;
+        max-width: 100%;
+    }
+}
+
+.custom-search-list {
+
+    .mx-listview-searchbar {
+        background-color: #fff;
+        border-radius: $border-radius-default;
+        max-width: 360px;
+        @extend .custom-search-input;
+
+        &>.mx-button {
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 15px;
+            height: 22px;
+            width: 22px;
+            font-size: 9px;
+            color: #818080;
+            border: none;
+            background-color: #f0f0f0;
+            padding: 0;
+
+            span {
+                line-height: unset;
+
+                &::before {
+                    font-weight: bold;
+                }
+            }
+
+            &:has(.mx-icon-refresh) {
+                display: none;
+            }
+        }
+    }
+}
+
+.custom-search-container {
+    display: flex;
+    box-shadow: $container-box-shadow;
+    background-color: #fff;
+    border-radius: $border-radius-default;
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 0;
+        @extend .custom-search-input;
+
+        .form-control {
+            border: none;
+        }
+    }
+
+    .mx-button {
+        border-radius: 0;
+        border-start-end-radius: $border-radius-default;
+        border-end-end-radius: $border-radius-default;
+        min-width: 80px;
+    }
+
+    &:has(.form-control[disabled]) {
+        background-color: $input-disabled;
+        border: 1px solid $border-color-default;
+    }
+}
+
+
+// /********************* floating label Auto complete ***********************/
+// .autoCompleteMainContainer {
+//     position: relative;
+//     min-height: 50px;
+//     justify-content: center;
+
+//     .control-label {
+//         padding: 0 !important;
+//         white-space: break-spaces !important;
+//         margin: 8px 24px 8px 16px !important;
+//         transition: 0.2s ease all;
+//         text-transform: capitalize;
+//         font-weight: 400 !important;
+//     }
+
+//     &:has(.select2-selection__clear) {
+//         .control-label {
+//             margin: 3px 24px 30px 8px !important;
+//             font-size: 12px !important;
+//         }
+//     }
+
+//     div[data-dojo-attach-point="autoCompleteComboContainer"] {
+//         line-height: 0;
+//     }
+
+//     .select2-container--default {
+//         position: unset !important;
+
+//         .select2-selection--single {
+//             position: absolute !important;
+//             bottom: 0;
+//             z-index: 1;
+//             height: 100% !important;
+//             width: 100% !important;
+//             background-color: unset !important;
+//             padding: 8px 24px 8px 8px !important;
+//             display: flex;
+//             align-items: flex-end !important;
+//             border-color: #e7e7e9;
+//             gap: 10px;
+
+//             &:focus-visible {
+//                 outline: none;
+//             }
+
+//             .select2-selection__rendered {
+//                 padding: 0;
+//                 line-height: normal;
+//                 flex-direction: row-reverse;
+//                 display: flex;
+//                 gap: 5px;
+
+//                 .select2-selection__clear {
+//                     filter: invert(21%) sepia(64%) saturate(3383%) hue-rotate(353deg) brightness(91%) contrast(90%);
+//                 }
+//             }
+
+//             .select2-selection__arrow {
+//                 top: 50%;
+//                 transform: translate(0, -50%);
+//                 background-image: url('resources/arrow.svg');
+//                 background-repeat: no-repeat;
+//                 background-position: calc(100% - 5px) center;
+
+//                 b {
+//                     display: none;
+//                 }
+//             }
+//         }
+//     }
+
+//     &.has-error .form-control {
+//        border-color: $brand-danger;
+//     }
+// }
+
+// .select2-dropdown {
+//     border-color: #e7e7e9;
+// }
+
+// body:has(.autoCompleteMainContainer.has-error) {
+//     .select2-dropdown {
+//         border-color: $brand-danger;
+//     }
+// }
+
+/********************* floating label file manager ***********************/
+// .floating-label-file-manager {
+//     .control-label {
+//         width: unset;
+//     }
+
+//     .mx-compound-control {
+//         justify-content: space-between;
+//         gap: 10px;
+
+//         input.form-control {
+//             background-color: #fff;
+//             padding-left: 8px !important;
+//             max-width: unset;
+//             min-height: 40px;
+//         }
+
+//         .btn {
+//             margin: 0;
+
+//             &.mx-fileinput-download-button {
+//                 font-size: 0;
+//                 border: none;
+
+//                 &::before {
+//                     content: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' width='24'  viewBox='0 0 18 18'><path d='M8.98189 12.708L4.66189 8.388C4.55389 8.28 4.49989 8.148 4.49989 7.992C4.49989 7.836 4.55389 7.704 4.66189 7.596C4.76989 7.476 4.90189 7.416 5.05789 7.416C5.21389 7.416 5.34589 7.476 5.45389 7.596L8.42389 10.548V0H9.55789V10.548L12.5279 7.596C12.6359 7.476 12.7679 7.416 12.9239 7.416C13.0799 7.416 13.2119 7.476 13.3199 7.596C13.4279 7.704 13.4819 7.836 13.4819 7.992C13.4819 8.148 13.4279 8.28 13.3199 8.388L8.98189 12.708ZM3.94189 18V16.884H14.0579V18H3.94189Z'/></svg>");
+//                     filter: invert(29%) sepia(1%) saturate(452%) hue-rotate(314deg) brightness(92%) contrast(95%);
+//                 }
+
+//                 &:hover::before {
+//                     filter: invert(0%) sepia(21%) saturate(0%) hue-rotate(170deg) brightness(96%) contrast(98%);
+//                 }
+
+//                 &[disabled]::before {
+//                     opacity: 0.4;
+//                 }
+
+//                 &:hover {
+//                     background-color: transparent
+//                 }
+//             }
+
+//             &.mx-fileinput-upload-button {
+//                 // @extend .info-button;
+//             }
+//         }
+//     }
+
+
+//     &.has-error .form-control {
+//        border-color: $brand-danger;
+//     }
+// }

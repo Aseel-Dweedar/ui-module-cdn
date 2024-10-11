@@ -1,0 +1,22 @@
+@media screen and (max-width: 767px) {
+    .rta-default-layout {
+        .mx-scrollcontainer-top.region-topbar {
+            .navbar-brand {
+                .row {
+                    .profile-dropdown {
+
+                        a {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .layout-atlas-responsive-default .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open)>.region-sidebar {
+        width: 60px !important;
+    }
+}

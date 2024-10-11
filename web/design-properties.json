@@ -1,0 +1,32 @@
+{
+    "DivContainer": [
+        {
+            "name": "Background color",
+            "type": "ColorPicker",
+            "description": "Change the background color of the container.",
+            "options": [
+                {
+                    "name": "Background Light Purple",
+                    "class": "background-light-purple"
+                },                
+                {
+                    "name": "Background White",
+                    "class": "background-white"
+                }
+            ]
+        }
+    ],
+    "DynamicText": [
+        {
+            "name": "Color",
+            "type": "ColorPicker",
+            "description": "Change the color of text.",
+            "options": [
+                {
+                    "name": "Teal",
+                    "class": "text-teal"
+                }
+            ]
+        }
+    ]
+}

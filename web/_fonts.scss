@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "RTA-Regular";
+    src: url("fonts/RTA-Regular.eot");
+    src: url("fonts/RTA-Regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/RTA-Regular.ttf") format("truetype"),
+        url("fonts/RTA-Regular.woff") format("truetype"),
+        url("fonts/RTA-Regular.woff2") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "RTA-Bold";
+    src: url("fonts/RTA-Bold.eot");
+    src: url("fonts/RTA-Bold.eot?#iefix") format("embedded-opentype"),
+        url("fonts/RTA-Bold.ttf") format("truetype"),
+        url("fonts/RTA-Bold.woff") format("truetype"),
+        url("fonts/RTA-Bold.woff2") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "RTA-Light";
+    src: url("fonts/RTA-Light.eot");
+    src: url("fonts/RTA-Light.eot?#iefix") format("embedded-opentype"),
+        url("fonts/RTA-Light.ttf") format("truetype"),
+        url("fonts/RTA-Light.woff") format("truetype"),
+        url("fonts/RTA-Light.woff2") format("truetype");
+    font-weight: Light;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('./fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+        url('./fonts/glyphicons-halflings-regular.woff') format('woff');
+}
+
+.glyphicon {
+    // position: relative;
+    // top: 1px;
+    // display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// @font-face {
+//     font-family: 'FontAwesome';
+//     src: url("../fonts/fontawesome/fontawesome-webfont.eot?v=4.7.0");
+//     src: url("../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+//         url("../fonts/fontawesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+//         url("../fonts/fontawesome/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+//         url("../fonts/fontawesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+//         url("../fonts/fontawesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
+body {
+    font-family: "RTA-Regular", sans-serif;
+}
+
+.font-family-bold {
+    font-family: "RTA-bold", sans-serif;
+}
+
+.font-family-light {
+    font-family: "RTA-Light", sans-serif;
+}

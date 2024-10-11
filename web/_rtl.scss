@@ -1,0 +1,48 @@
+body[dir="rtl"] {
+
+    .timeline {
+        &.timeline-default .timeline-list>ul>li::before {
+            right: -5px;
+            left: initial;
+        }
+
+        &.timeline-zigzag .timeline-list>ul>li {
+
+            &:nth-child(even)::before {
+                right: initial;
+                left: -10px;
+            }
+
+            &:nth-child(odd)::before {
+                left: initial;
+                right: -10px;
+            }
+        }
+    }
+
+    .floating-label {
+        &.mx-dropdown {
+            .control-label {
+                left: initial;
+                right: 16px;
+            }
+
+            &.dorpDown-with-value .control-label,
+            &:has(.form-control:focus) .control-label {
+                left: initial;
+                right: 8px;
+            }
+        }
+
+        &.mx-datepicker {
+
+            .btn-calendar,
+            .mx-compound-control button,
+            .mx-compound-control button:hover,
+            .mx-compound-control button:focus {
+                right: initial;
+                left: 0;
+            }
+        }
+    }
+}

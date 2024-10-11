@@ -1,0 +1,48 @@
+@mixin display-number-of-line($num-of-lines) {
+    display: -webkit-box;
+    -webkit-line-clamp: $num-of-lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// scrollbar dynamic style
+@mixin scrollbar($handle_width,
+    $handle_height,
+    $handle_background,
+    $handle_radius,
+    $handle_on_hover,
+    $track_background) {
+
+    /* Height */
+    &::-webkit-scrollbar {
+        width: $handle_width;
+        height: $handle_height;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: $track_background;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $handle_background;
+        border-radius: $handle_radius;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $handle_on_hover;
+    }
+}
+
+// required Field label
+@mixin requiredField($position, $top) {
+    content: "•";
+    color: $brand-danger;
+    font-size: 19px;
+    position: $position;
+    top: $top;
+    line-height: 1;
+}

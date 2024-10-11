@@ -1,0 +1,52 @@
+.modal-dialog .modal-content .modal-header h4 {
+    margin: 0;
+    color: #53565a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-dialog .modal-content .modal-body {
+    padding: 20px;
+}
+
+.modal-dialog .modal-content .modal-header .close {
+    margin-top: -3px;
+    opacity: 1;
+    color: #53565a;
+    text-shadow: none;
+}
+
+.mx-datagrid table {
+
+    tbody tr td,
+    th {
+        padding: 12px 5px;
+        color: #53565a;
+    }
+}
+
+.mx-grid .mx-grid-controlbar .mx-grid-pagingbar .mx-button {
+    color: #888;
+    padding: 2px;
+
+    span::before {
+        font-size: 18px;
+    }
+}
+
+.mx-dataview .mx-dataview-controls {
+    border-top: 0px;
+}
+
+.card {
+    padding: 32px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    line-height: normal;
+}
+
+.container {
+    margin-top: 30px;
+}

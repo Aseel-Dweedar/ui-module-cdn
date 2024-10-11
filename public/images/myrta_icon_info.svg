@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_moreinfo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="7 2 11 2 11 15 7 15"></polygon>
+    </defs>
+    <g id="AdminServices" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="001---Admin-Service" transform="translate(-105.000000, -150.000000)">
+            <g id="icon_moreinfo" transform="translate(105.000000, 150.000000)">
+                <circle id="Oval" fill="#025EE1" fill-rule="nonzero" cx="8.5" cy="8.5" r="8.5"></circle>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M10,5.4544614 C10,5.75312067 9.77366488,6 9.49985872,6 L7.50014128,6 C7.22633512,6 7,5.75312067 7,5.4544614 L7,3.5455386 C7,3.24734166 7.22633512,3 7.50014128,3 L9.49985872,3 C9.77366488,3 10,3.24734166 10,3.5455386 L10,5.4544614 Z M7.18929622,8.45466805 C7.19589372,8.20575656 7.39858365,8 7.63536068,8 L9.36463932,8 C9.60141635,8 9.80410628,8.20575656 9.81070378,8.45466805 L9.99983218,13.9091435 C10.0064297,14.1576696 9.81766781,14.3634262 9.58089079,14.3634262 L7.41910921,14.3634262 C7.18233219,14.3634262 6.99357032,14.1576696 7.00016782,13.9091435 L7.18929622,8.45466805 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
