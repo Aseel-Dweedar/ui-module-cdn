@@ -9,3 +9,7 @@
 @import 'custom';
 @import 'rtl';
 @import 'responsive';
+
+.ui-container>.row {
+    margin-bottom: 50px;
+}
